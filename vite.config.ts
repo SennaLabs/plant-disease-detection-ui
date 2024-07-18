@@ -7,4 +7,5 @@ import svgr from "vite-plugin-svgr";
 export default defineConfig({
   plugins: [react(), tsconfigPaths(), svgr({ svgrOptions: { ref: true } })],
   server: { port: 5173 },
+  base: '/plant-disease-detection-ui/'
 });
