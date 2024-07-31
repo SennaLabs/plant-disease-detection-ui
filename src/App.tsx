@@ -1,14 +1,16 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import './App.css';
-import Navbar from './components/nav/nav';
-import TopSection from 'components/top-section/top-section';
-import Inspect from 'components/inspect/inspect';
+import Home from 'pages/home';
+import Login from 'pages/login';
 
 export function App() {
     return (
-        <>
-            <Navbar />
-            <TopSection />
-            <Inspect />
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/login' element={<Login />} />
+            </Routes>
+        </BrowserRouter>
     );
 }

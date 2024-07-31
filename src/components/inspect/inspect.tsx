@@ -37,6 +37,9 @@ const Inspect: React.FC = () => {
 
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
+    // check if isLoggedIn is true in localStorage
+    // if not, redirect to login page
+
     const handleClick = () => {
         if (fileInputRef.current) {
             fileInputRef.current.click();
@@ -221,7 +224,7 @@ const Inspect: React.FC = () => {
                                                     {getCurrentImagePredictions().map(
                                                         (
                                                             prediction: any,
-                                                            index: any
+                                                            index: number
                                                         ) => {
                                                             const imageDimension =
                                                                 imageDimensions.find(
@@ -257,18 +260,32 @@ const Inspect: React.FC = () => {
                                                                 scaleY;
 
                                                             return (
-                                                                <rect
-                                                                    key={index}
-                                                                    className='fill-transparent stroke-red-500 stroke-2'
-                                                                    x={x}
-                                                                    y={y}
-                                                                    width={
-                                                                        width
-                                                                    }
-                                                                    height={
-                                                                        height
-                                                                    }
-                                                                />
+                                                                <g key={index}>
+                                                                    <rect
+                                                                        className='fill-transparent stroke-red-500 stroke-2'
+                                                                        x={x}
+                                                                        y={y}
+                                                                        width={
+                                                                            width
+                                                                        }
+                                                                        height={
+                                                                            height
+                                                                        }
+                                                                    />
+                                                                    <text
+                                                                        x={x}
+                                                                        y={
+                                                                            y -
+                                                                            5
+                                                                        }
+                                                                        className='fill-red-500 text-xs'
+                                                                    >
+                                                                        {`${
+                                                                            index +
+                                                                            1
+                                                                        }`}
+                                                                    </text>
+                                                                </g>
                                                             );
                                                         }
                                                     )}

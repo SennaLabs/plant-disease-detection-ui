@@ -28,7 +28,7 @@
         "react-intersection-observer": "^9.10.3",
         "react-number-format": "^5.3.4",
         "react-paginate": "^8.2.0",
-        "react-router-dom": "^6.23.1",
+        "react-router-dom": "^6.25.1",
         "react-router-prompt": "^0.7.0",
         "react-toastify": "^10.0.5",
         "react-tooltip": "^5.26.4",
