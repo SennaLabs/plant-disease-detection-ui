@@ -8,8 +8,11 @@ export function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/login' element={<Login />} />
+                <Route path='/plant-disease-detection-ui/' element={<Home />} />
+                <Route
+                    path='/plant-disease-detection-ui/login'
+                    element={<Login />}
+                />
             </Routes>
         </BrowserRouter>
     );
