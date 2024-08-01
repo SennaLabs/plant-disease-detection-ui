@@ -9,7 +9,7 @@ const Login: React.FC = () => {
         if (username === 'admin' && password === 'password') {
             localStorage.setItem('isLoggedIn', 'true');
             // redirect to home page
-            window.location.href = '/';
+            window.location.href = '/plant-disease-detection-ui/';
         } else {
             setError('Invalid username or password');
         }
