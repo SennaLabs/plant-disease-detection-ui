@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login: React.FC = () => {
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [error, setError] = useState<string>('');
+    const navigate = useNavigate();
 
     const handleLogin = () => {
         if (username === 'admin' && password === 'password') {
             localStorage.setItem('isLoggedIn', 'true');
             // redirect to home page
-            window.location.href = '/plant-disease-detection-ui/';
+            navigate('/');
         } else {
             setError('Invalid username or password');
         }
