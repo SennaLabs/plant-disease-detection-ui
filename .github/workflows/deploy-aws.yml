@@ -22,7 +22,7 @@ jobs:
                   CI=false yarn build
             - uses: actions/upload-artifact@master
               with:
-                  name: apex-website-database-ui-staging artifacts
+                  name: pineapple-coconat-detection-react artifacts
                   path: dist/
     deploy:
         name: Deploy to AWS.
@@ -34,7 +34,7 @@ jobs:
             - name: Download built artifact
               uses: actions/download-artifact@master
               with:
-                  name: apex-website-database-ui-staging artifacts
+                  name: pineapple-coconat-detection-react artifacts
                   path: dist
 
             - name: Configure AWS Credentials
@@ -44,4 +44,4 @@ jobs:
                   aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
                   aws-region: ap-southeast-1
             - name: Deploy static site to S3 bucket
-              run: aws s3 sync ./dist/ s3://apex-website-database-ui-stg --delete
+              run: aws s3 sync ./dist/ s3://pineapple-coconat-detection-react --delete
